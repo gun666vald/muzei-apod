@@ -1,0 +1,9 @@
+A modern, ultra-lightweight NASA Astronomy Picture of the Day (APOD) wallpaper provider for Muzei Live Wallpaper.
+
+Features:
+• Next-Gen NASA Science 4K CDN engine with dynamic upscaling (3840x2160)
+• Real-time HTTP 403 Forbidden probe and preview recovery
+• Chronological video bypass to guarantee a high-res photo every day
+• Zero-allocation socket stream directly into Muzei cache
+• Battery-aware scheduling via Android WorkManager
+• Ultra-lightweight footprint (372 KB) with zero telemetry or trackers
