@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NASA APOD</string>
+    <string name="source_description">NASA Astronomy Picture of the Day</string>
+</resources>
