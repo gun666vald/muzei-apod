@@ -11,8 +11,17 @@ android {
         applicationId = "de.gunvald.muzei.apod"
         minSdk = 24
         targetSdk = 35
-        versionCode = 300
-        versionName = "3.0.0"
+        versionCode = 301
+        versionName = "3.0.1"
+    }
+
+    signingConfigs {
+        create("release") {
+            storeFile = file("${project.rootDir}/release.keystore")
+            storePassword = "muzeiapodpass"
+            keyAlias = "muzei-apod"
+            keyPassword = "muzeiapodpass"
+        }
     }
 
     buildTypes {
@@ -23,9 +32,16 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName("release")
         }
     }
+
+    // Required by IzzyOnDroid & F-Droid: Disables Google's encrypted dependency blob
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
